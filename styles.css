@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+  font-family: "Microsoft Yahei", sans-serif; /* Chinese font */
+  color: #fff;
+}
+
+.fireworks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.firework {
+  position: absolute;
+  width: 10px; /* Increase size */
+  height: 10px; /* Increase size */
+  background-color: #ffcc00; /* Change color to yellow */
+  border-radius: 50%;
+  animation: fireworkAnimation 2s linear infinite;
+  top: calc(100vh + 50px); /* Adjust the starting position */
+}
+
+
+@keyframes fireworkAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotateZ(0deg) rotateY(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-500px) rotateZ(360deg) rotateY(360deg);
+  }
+}
+
+.chinese-style {
+  position: relative;
+  text-align: center;
+}
+
+.text-container {
+  margin-bottom: 20px;
+}
+
+.chinese-text {
+  font-size: 48px;
+  color: #87b987; /* Green color */
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Smooth emergence effect */
+}
+
+.flashing-text {
+  font-size: 72px;
+  font-style: oblique;
+  color: orangered; /* Orange color */
+  opacity: 0;
+  transition: opacity 2s ease-in-out 1s; /* Delayed emergence effect */
+}
